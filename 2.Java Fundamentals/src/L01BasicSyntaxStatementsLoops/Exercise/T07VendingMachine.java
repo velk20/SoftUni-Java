@@ -1,8 +1,8 @@
-package L01BasicSyntaxStatementsLoops;
+package L01BasicSyntaxStatementsLoops.Exercise;
 
 import java.util.Scanner;
 
-public class Demo {
+public class T07VendingMachine {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         double nuts = 2.0;
