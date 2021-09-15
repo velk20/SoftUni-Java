@@ -8,19 +8,9 @@ public class T06ForeignLanguages {
         String n = scanner.nextLine();
 
         switch (n) {
-            case "USA":
-            case "England":
-                System.out.println("English");
-                break;
-            case "Spain":
-            case "Argentina":
-            case "Mexico":
-                System.out.println("Spanish");
-                break;
-            default:
-                System.out.println("unknown");
-                break;
-
+            case "USA", "England" -> System.out.println("English");
+            case "Spain", "Argentina", "Mexico" -> System.out.println("Spanish");
+            default -> System.out.println("unknown");
         }
     }
 }
