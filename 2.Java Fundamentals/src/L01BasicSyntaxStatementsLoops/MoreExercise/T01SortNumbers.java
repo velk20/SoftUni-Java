@@ -1,7 +1,6 @@
 package L01BasicSyntaxStatementsLoops.MoreExercise;
 
 import java.util.Scanner;
-import java.util.UnknownFormatConversionException;
 
 public class T01SortNumbers {
     public static void main(String[] args) {
