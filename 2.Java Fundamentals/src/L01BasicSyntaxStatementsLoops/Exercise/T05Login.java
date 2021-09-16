@@ -22,7 +22,7 @@ public class T05Login {
                 input = scanner.nextLine();
 
             } else {
-                System.out.println("User sunny blocked!");
+                System.out.printf("User %s blocked!",pass);
                 break;
             }
         }
