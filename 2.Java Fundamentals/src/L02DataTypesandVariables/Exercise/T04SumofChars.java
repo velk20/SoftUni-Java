@@ -9,8 +9,7 @@ public class T04SumofChars {
         int sum = 0;
         for (int i = 0; i < n; i++) {
             char c = scanner.nextLine().charAt(0);
-            int a = c;
-            sum += a;
+            sum += c;
         }
 
         System.out.printf("The sum equals: %d",sum);

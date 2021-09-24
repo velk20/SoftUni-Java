@@ -12,7 +12,7 @@ public class T08BeerKegs {
             String name = scanner.nextLine();
             double r = Double.parseDouble(scanner.nextLine());
             int h = Integer.parseInt(scanner.nextLine());
-// π * r^2 * h.
+            // π * r^2 * h.
             double V = Math.PI * Math.pow(r, 2) * h;
             if (V > max) {
                 max = V;
