@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class T11Snowballs {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        //TODO test
+        //fixme dsadas
+
         int n = Integer.parseInt(scanner.nextLine());
         double max = Double.MIN_VALUE;
         int maxShow = 0;
