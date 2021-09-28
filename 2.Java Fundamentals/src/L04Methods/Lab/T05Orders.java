@@ -1,10 +1,10 @@
-package L04Methods;
+package L04Methods.Lab;
 
 import java.util.Scanner;
 
-public class Demo {
+public class T05Orders {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-    }
-}
+    }}
+
