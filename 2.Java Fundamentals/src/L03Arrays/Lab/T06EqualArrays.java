@@ -10,21 +10,18 @@ public class T06EqualArrays {
         int[] secondArr = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
         int sum = 0;
         boolean flag = true;
-
         for (int i = 0; i < firstArr.length; i++) {
             if (firstArr[i] == secondArr[i]) {
                 sum += firstArr[i];
             }else {
                 System.out.printf("Arrays are not identical. Found difference at %d index.", i);
                 flag = false;
-
                 break;
-
             }
         }
-
         if (flag) {
             System.out.printf("Arrays are identical. Sum: %d", sum);
         }
+
     }
 }

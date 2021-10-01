@@ -18,6 +18,7 @@ String[] dayOfWeek = {"Monday",
         } else {
             System.out.println("Invalid day!");
         }
+
 }
 
 }

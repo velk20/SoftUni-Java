@@ -7,9 +7,9 @@ public class T00Demo {
         Scanner sc = new Scanner(System.in);
         int[] numbers = new int[10];
         for (int i = 0; i < numbers.length; i++)
-            numbers[i] = 1;
+            numbers[i] = i;
         numbers[5] = numbers[2] + numbers[7];
-        numbers[10] = 1; // ArrayIndexOutOfBoundsException
+        // numbers[10] = 1; // ArrayIndexOutOfBoundsException
         String[] days = {
                 "Monday",
                 "Tuesday",
@@ -20,7 +20,7 @@ public class T00Demo {
                 "Sunday"
         };
 
-//Reading from a single line
+        //Reading from a single line
         String values = sc.nextLine();
         String[] items = values.split(" ");
         int[] arr = new int[items.length];
