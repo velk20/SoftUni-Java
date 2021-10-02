@@ -1,6 +1,7 @@
 package L03Arrays.Exercise;
 
-import java.util.Scanner;
+
+import java.util.*;
 
 public class T00Demo {
     public static void main(String[] args) {

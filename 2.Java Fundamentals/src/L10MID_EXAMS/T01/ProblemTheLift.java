@@ -1,4 +1,4 @@
-package L03Arrays.Exams;
+package L10MID_EXAMS.T01;
 
 import java.util.Arrays;
 import java.util.Scanner;

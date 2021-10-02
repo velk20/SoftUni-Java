@@ -9,10 +9,18 @@ public class T02CommonElements {
         String[] arr = scanner.nextLine().split(" ");
         String[] arr2 = scanner.nextLine().split(" ");
 
-        for (int i = 0; i < arr2.length; i++) {
-            for (int j = 0; j < arr.length; j++) {
-                if (arr2[i].equals(arr[j])) {
-                    System.out.print(arr[j]+" ");
+//        for (int i = 0; i < arr2.length; i++) {
+//            for (int j = 0; j < arr.length; j++) {
+//                if (arr2[i].equals(arr[j])) {
+//                    System.out.print(arr[j]+" ");
+//                }
+//            }
+//        }
+
+        for (String e1 : arr2) {
+            for (String e2 : arr) {
+                if (e1.equals(e2)) {
+                    System.out.print(e1+" ");
                 }
             }
         }
