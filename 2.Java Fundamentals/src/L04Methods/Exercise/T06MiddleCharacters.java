@@ -13,7 +13,7 @@ public class T06MiddleCharacters {
     public static String findMiddleCharacter(String s) {
 
         if (s.length() % 2 != 0) {
-            char ch = s.charAt(s.length() / 2);
+           char ch = s.charAt(s.length() / 2);
 
             return ""+ch;
 
