@@ -1,8 +1,8 @@
-package L07MapsLambdaAndStreamAPI;
+package L08TextProcessing.Lab;
 
-import java.util.*;
+import java.util.Scanner;
 
-public class Demo {
+public class T02RepeatStrings {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

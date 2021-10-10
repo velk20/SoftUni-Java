@@ -1,8 +1,8 @@
-package L09RegularExpressions;
+package L07MapsLambdaAndStreamAPI.Exercise;
 
 import java.util.Scanner;
 
-public class Demo {
+public class T01CountCharsInAString {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
