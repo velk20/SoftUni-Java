@@ -1,61 +1,58 @@
 package L10MID_EXAMS.T01;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class ProblemTheLift {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int people = Integer.parseInt(scanner.nextLine());
+        int peopleWaiting = Integer.parseInt(scanner.nextLine());
         int[] wagons = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-        int readyToGoPeople = 0;
-        boolean fullWagon = false;
+        boolean fullWagons = true;
 
         for (int i = 0; i < wagons.length; i++) {
-            int curWagonSpace = wagons[i];
-            int isThisFree = 4 - curWagonSpace;
-            if (readyToGoPeople>=people) {
-                break;
-            }
-            if (isThisFree > 0) {
-
-                    readyToGoPeople += isThisFree;
-                if (people > readyToGoPeople) {
-
-                    wagons[i] = isThisFree + curWagonSpace;
+            int currentWagon = wagons[i];
+            if (currentWagon < 4) {
+                int availableSpace = 4 - currentWagon;
+                if (peopleWaiting >= availableSpace) {
+                    wagons[i] = 4;
+                    peopleWaiting -= availableSpace;
                 } else {
-                    wagons[i] = people-(readyToGoPeople - isThisFree + curWagonSpace);
+                    wagons[i] += peopleWaiting;
+                    peopleWaiting = 0;
                 }
             }
-
         }
-        for (int i = 0; i < wagons.length; i++) {
-            if (wagons[i] == 4) {
-                fullWagon = true;
-            } else {
-                fullWagon = false;
+        for (int n :
+                wagons) {
+            if (n != 4) {
+                fullWagons = false;
                 break;
+
             }
         }
-        if (readyToGoPeople < people) {
-            System.out.printf("There isn't enough space! %d people in a queue!\n",people-readyToGoPeople);
-            for (int e :
-                    wagons) {
-                System.out.printf("%d ",e);
-            }
-        } else if (fullWagon && readyToGoPeople == people) {
-            for (int e :
-                    wagons) {
-                System.out.printf("%d ",e);
-            }
+        if (peopleWaiting == 0) {
+            if (!fullWagons) {
+                System.out.println("The lift has empty spots!");
+                for (int n :
+                        wagons) {
 
-        } else if (!fullWagon) {
-            System.out.println("The lift has empty spots!");
-            for (int e :
+                    System.out.printf("%d ", n);
+                }
+
+            } else {
+                for (int n :
+                        wagons) {
+
+                    System.out.printf("%d ", n);
+                }
+            }
+        } else  {
+            System.out.printf("There isn't enough space! %d people in a queue!\n",peopleWaiting);
+            for (int n :
                     wagons) {
-                System.out.printf("%d ",e);
+
+                System.out.printf("%d ", n);
             }
         }
-
     }
 }
