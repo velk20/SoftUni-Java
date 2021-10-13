@@ -55,7 +55,7 @@ public class T04ListManipulationBasics {
 
     private static void removeItem(List<Integer> numbers,int num) {
         for (int i = 0; i < numbers.size(); i++) {
-            if (numbers.get(i) == num) {
+            if (numbers.get(i).equals(num)) {
 
                 numbers.remove(i);
                 return;

@@ -11,7 +11,8 @@ public class T07RemoveNegativesAndReverse {
         Collections.reverse(numbers);
         if (numbers.isEmpty()) {
             System.out.println("empty");
-        }else System.out.println(numbers.toString().replaceAll("[\\[\\],]",""));
+        }else System.out.println(numbers.toString().replaceAll("[\\[\\],]",""));//tova maha vsichki
+        // '[' ; ']' ; ','
     }
 
     private static void removeNegativeNumbers(List<Integer> numbers) {

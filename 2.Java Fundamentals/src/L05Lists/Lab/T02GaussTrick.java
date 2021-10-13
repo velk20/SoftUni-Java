@@ -12,34 +12,20 @@ public class T02GaussTrick {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         List<Integer> numbers = Arrays.stream(scanner.nextLine().split(" ")).map(Integer::parseInt).collect(Collectors.toList());
-        gaussTrick(numbers);
-    }
-
-    private static void gaussTrick(List<Integer> numbers) {
-        List<Integer> newNumbers = new ArrayList<Integer>();
-        if (numbers.size() % 2 == 0) {
-            for (int i = 0; i < numbers.size() / 2; i++) {
-                int curAdd = numbers.get(i) + numbers.get((numbers.size() - 1) - i);
-                newNumbers.add(curAdd);
-            }
-
-        } else {
-            int middleNumber = numbers.get(numbers.size() / 2);
-            for (int i = 0; i < numbers.size() / 2; i++) {
-                int curAdd = numbers.get(i) + numbers.get((numbers.size() - 1) - i);
-                newNumbers.add(curAdd);
-            }
-            newNumbers.add(middleNumber);
+        int halfSize = numbers.size() / 2;
+        for (int i = 0; i < halfSize; i++) {
+            int sum = numbers.get(i) + numbers.get(numbers.size()-1) ;
+            numbers.set(i, sum);
+            numbers.remove(numbers.size() - 1);
         }
-        System.out.println(joinElementsByDelimiter(newNumbers, " "));
+
+        for (Integer n :
+                numbers) {
+            System.out.print(n+" ");
+        }
     }
-    static String joinElementsByDelimiter
-            (List<Integer> items, String delimiter) {
-        String output = "";
-        for (Integer item : items)
-            output += (new DecimalFormat("0.#").format(item) + delimiter);
-        return output;
-    }
+
+
 
 
 }
