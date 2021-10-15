@@ -19,10 +19,9 @@ public class T02GaussTrick {
             numbers.remove(numbers.size() - 1);
         }
 
-        for (Integer n :
-                numbers) {
-            System.out.print(n+" ");
-        }
+        System.out.println(numbers.toString().replaceAll("[\\[\\],]",""));
+
+
     }
 
 

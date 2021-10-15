@@ -11,9 +11,29 @@ public class T03MergingLists {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         List<Integer> firstList = Arrays.stream(scanner.nextLine().split(" ")).map(Integer::parseInt).collect(Collectors.toList());
-        List<Integer> secondList =
-                Arrays.stream(scanner.nextLine().split(" ")).map(Integer::parseInt).collect(Collectors.toList());
-        mergeTwoLists(firstList, secondList);
+        List<Integer> secondList = Arrays.stream(scanner.nextLine().split(" ")).map(Integer::parseInt).collect(Collectors.toList());
+        List<Integer> resultList = new ArrayList<>();
+        //mergeTwoLists(firstList, secondList);
+
+        //Lab - teacher
+        int minSize = Math.min(firstList.size(), secondList.size());
+        for (int i = 0; i < minSize; i++) {
+            int firstItem = firstList.get(i);
+            int secondItem = secondList.get(i);
+
+            resultList.add(firstItem);
+            resultList.add(secondItem);
+        }
+
+        //dobavq poslednite elementi ot dulgiq list (ostanalite elementi)
+        if (firstList.size() > secondList.size()) {
+            resultList.addAll(firstList.subList(minSize, firstList.size()));
+        } else {
+            resultList.addAll(secondList.subList(minSize, secondList.size()));
+        }
+
+
+        System.out.println(resultList.toString().replaceAll("[\\[\\],]",""));
     }
 
     private static void mergeTwoLists(List<Integer> firstList, List<Integer> secondList) {
@@ -30,11 +50,10 @@ public class T03MergingLists {
                 }
             }
 
-
-
             for (int i = 0; i < firstList.size(); i++) {
                 mergedList.add(firstList.get(i));
             }
+
         } else {
             while (!firstList.isEmpty()) {
 
@@ -52,18 +71,7 @@ public class T03MergingLists {
             }
         }
 
-        System.out.println(outputNumbers(mergedList," "));
+        System.out.println(mergedList.toString().replaceAll("[\\[\\],]", ""));
     }
-
-
-    public static String outputNumbers(List<Integer> numbers, String delimiter) {
-        String output = "";
-        for (Integer item :
-                numbers) {
-            output += item + delimiter;
-        }
-        return output;
-    }
-
 
 }

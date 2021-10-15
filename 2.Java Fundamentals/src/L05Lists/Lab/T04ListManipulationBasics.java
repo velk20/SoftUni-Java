@@ -33,16 +33,8 @@ public class T04ListManipulationBasics {
             input = scanner.nextLine();
         }
 
-        System.out.println(outputNumbers(numbers," "));
+        System.out.println(numbers.toString().replaceAll("[\\[\\],]", ""));
 
-    }
-    public static String outputNumbers(List<Integer> numbers, String delimiter) {
-        String output = "";
-        for (Integer item :
-                numbers) {
-            output += item + delimiter;
-        }
-        return output;
     }
 
     private static void insertItem(List<Integer> numbers,int num, int index) {
@@ -53,15 +45,7 @@ public class T04ListManipulationBasics {
         numbers.remove(num);
     }
 
-    private static void removeItem(List<Integer> numbers,int num) {
-        for (int i = 0; i < numbers.size(); i++) {
-            if (numbers.get(i).equals(num)) {
-
-                numbers.remove(i);
-                return;
-            }
-        }
-    }
+    private static void removeItem(List<Integer> numbers,int num) {numbers.remove(Integer.valueOf(num));}
 
     private static void addItem(List<Integer> numbers,int num) {
         numbers.add(num);

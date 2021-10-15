@@ -17,9 +17,7 @@ public class T01SumAdjacentEqualNumbers {
                 numbers.remove(i + 1);
                 i = -1;// trqbva da zapochvame otnachalo
             }
-
         }
-
         String output = joinElementsByDelimiter(numbers," ");
         System.out.println(output);
 
