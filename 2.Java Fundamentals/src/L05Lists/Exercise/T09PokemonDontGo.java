@@ -39,12 +39,7 @@ public class T09PokemonDontGo {
                 } else {
                     pokemons.set(i, element - removedElement);
                 }
-
-
             }
-
-
-
         }
 
         System.out.println(totalSum);

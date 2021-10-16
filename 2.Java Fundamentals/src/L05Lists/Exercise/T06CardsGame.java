@@ -26,7 +26,7 @@ public class T06CardsGame {
                 deckTwo.add(one);
                 deckOne.remove(0);
                 deckTwo.remove(0);
-            } else if (two == one) {
+            } else {
                 deckOne.remove(0);
                 deckTwo.remove(0);
             }
