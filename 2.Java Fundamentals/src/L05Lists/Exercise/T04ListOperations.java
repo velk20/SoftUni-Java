@@ -26,9 +26,7 @@ public class T04ListOperations {
                 case "Shift":
                     shiftNumber(numbers,command[1], Integer.parseInt(command[2]));
                     break;
-
             }
-
             command = scanner.nextLine().split(" ");
         }
 
@@ -43,14 +41,10 @@ public class T04ListOperations {
         switch (direction) {
             case "left":
                 while (times > 0) {
-
                         int tempItem = numbers.get(0);
                         numbers.remove(0);
                         numbers.add(tempItem);
                         times--;
-
-
-
                 }
                 break;
 

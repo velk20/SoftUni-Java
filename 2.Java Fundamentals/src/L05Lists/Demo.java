@@ -1,14 +1,18 @@
 package L05Lists;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Demo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String str= "abcdef";
+        String st = "{lessonTitle}-Exercise";
+        String str = "{lessonTitle}:Exercise";
 
-        String[] array=str.split("(?<=\\G.{2})");
+        System.out.println(Arrays.toString(st.split("-")));
+        System.out.println(Arrays.toString(str.split("-")));
 
-        System.out.println(java.util.Arrays.toString(array));
     }
 }
