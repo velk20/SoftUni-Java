@@ -1,4 +1,4 @@
-package L10MID_EXAMS;
+package L10MID_EXAMS.T02;
 
 import java.util.Arrays;
 import java.util.List;

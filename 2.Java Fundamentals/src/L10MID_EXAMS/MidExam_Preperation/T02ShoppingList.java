@@ -55,9 +55,7 @@ public class T02ShoppingList {
     }
 
     private static void unnecessary(List<String> products, String item) {
-        if (products.contains(item)) {
-            products.remove(item);
-        }
+        products.remove(item);
     }
 
     private static void urgent(List<String> products, String item) {

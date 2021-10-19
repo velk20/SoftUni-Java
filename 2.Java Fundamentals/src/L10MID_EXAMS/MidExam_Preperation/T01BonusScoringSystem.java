@@ -8,15 +8,14 @@ public class T01BonusScoringSystem {
         Scanner scanner = new Scanner(System.in);
         int countStudents = Integer.parseInt(scanner.nextLine());
         int countOfLectures = Integer.parseInt(scanner.nextLine());
-        int additionalBonuses = Integer.parseInt(scanner.nextLine());
+        int additionalBonuses = Integer.parseInt(scanner.nextLine());//init...neshto si
 
-        double maxBonus = Double.MIN_VALUE;
+        double maxBonus = 0;
         int student = 0;
 
         for (int i = 0; i < countStudents; i++) {
             int studentAttendances = Integer.parseInt(scanner.nextLine());
-            double totalBonus = (studentAttendances * 1.0 / countOfLectures) * (5 + additionalBonuses);
-            totalBonus = Math.ceil(totalBonus);
+            double totalBonus = studentAttendances * 1.0 / countOfLectures * (5 + additionalBonuses);
             if (totalBonus > maxBonus) {
                 maxBonus=totalBonus;
                 student = studentAttendances;
