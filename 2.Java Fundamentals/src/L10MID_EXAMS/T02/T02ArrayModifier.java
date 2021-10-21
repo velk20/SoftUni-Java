@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class T00ArrayModifier {
+public class T02ArrayModifier {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         List<Integer> nums = Arrays.stream(scanner.nextLine().split(" ")).map(Integer::parseInt).collect(Collectors.toList());
