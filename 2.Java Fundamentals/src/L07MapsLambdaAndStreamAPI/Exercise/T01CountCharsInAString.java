@@ -22,5 +22,7 @@ public class T01CountCharsInAString {
         for (Map.Entry<Character, Integer> w : characterIntegerMap.entrySet()) {
             System.out.printf("%c -> %d%n", w.getKey(), w.getValue());
         }
+
+        //characterIntegerMap.entrySet().forEach(e-> System.out.println(e.getKey()+" -> "+e.getValue()));
     }
 }
