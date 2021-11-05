@@ -82,17 +82,25 @@ public class T03LegendaryFarming {
         }
 
 
+        //version : 1
         keyMaterials
                 .entrySet()
                 .stream()
                 .sorted(Map.Entry.<String,Integer>comparingByValue().reversed().thenComparing(Map.Entry.comparingByKey()))
                 .forEach(e-> System.out.println(e.getKey()+": "+e.getValue()));
 
+        //version: 2
+        keyMaterials.entrySet().stream().sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue()))
+                .forEach(e-> System.out.println(e.getKey()+": "+e.getValue()));
+
+
+        //version 1
         junk
                 .entrySet()
                 .stream()
                 .sorted(Map.Entry.<String,Integer>comparingByKey())
                 .forEach(e-> System.out.println(e.getKey()+": "+e.getValue()));
+
 
     }
 }

@@ -12,15 +12,21 @@ public class T07StudentAcademy {
             String name = scanner.nextLine();
             double grade = Double.parseDouble(scanner.nextLine());
 
+//            if (!students.containsKey(name)) {
+//                List<Double> d = new ArrayList<>();
+//                d.add(grade);
+//                students.put(name, d);
+//            } else {
+//                List<Double> d = students.get(name);
+//                d.add(grade);
+//                students.put(name, d);
+//            }
+
+            //shorter version
             if (!students.containsKey(name)) {
-                List<Double> d = new ArrayList<>();
-                d.add(grade);
-                students.put(name, d);
-            } else {
-                List<Double> d = students.get(name);
-                d.add(grade);
-                students.put(name, d);
+                students.put(name, new ArrayList<>());
             }
+            students.get(name).add(grade);
 
         }
 
