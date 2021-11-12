@@ -13,7 +13,7 @@ public class T01ValidUsernames {
             if (currName.length() >= 3 && currName.length() <= 16) {
                 for (int j = 0; j < currName.length(); j++) {
                     char ch = currName.charAt(j);
-                    if (Character.isAlphabetic(ch) || Character.isDigit(ch) || ch == '-' || ch =='_') {
+                    if (Character.isLetterOrDigit(ch) || ch == '-' || ch =='_') {
                         isValid = true;
 
                     }else {
