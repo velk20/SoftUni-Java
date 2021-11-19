@@ -9,7 +9,7 @@ public class T01Furniture {
         Scanner scanner = new Scanner(System.in);
         List<String> list = new ArrayList<>();
         double total = 0.0;
-        String regex = "[>]{2}(?<name>[A-Za-z]+)[<]{2}(?<price>[\\d]+[.\\d]+?)[!](?<quantity>\\d+)\\b";
+        String regex = "[>]{2}(?<name>[A-Za-z]+)[<]{2}(?<price>[\\d]+.?[\\d]*)[!](?<quantity>\\d+)\\b";
         String input = scanner.nextLine();
         while (!input.equals("Purchase")) {
             Pattern pattern = Pattern.compile(regex);

@@ -11,7 +11,7 @@ public class T03SoftUniBarIncome {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 String regex = "%(?<name>[A-Z][a-z]+)%[^|$%.]*<(?<product>\\w+)>[^|$%.]*\\|(?<count>\\d+)\\|[^|$%.]*?" +
-        "(?<price>[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?)\\$";
+        "(?<price>[\\d]+.?[\\d]*)\\$";
 
         List<String> output = new LinkedList<>();
         double totalIncome = 0;
@@ -34,9 +34,7 @@ String regex = "%(?<name>[A-Z][a-z]+)%[^|$%.]*<(?<product>\\w+)>[^|$%.]*\\|(?<co
             input = scanner.nextLine();
         }
 
-        for (String s : output) {
-            System.out.println(s);
-        }
+        output.forEach(System.out::println);
         System.out.printf("Total income: %.2f", totalIncome);
 
     }
