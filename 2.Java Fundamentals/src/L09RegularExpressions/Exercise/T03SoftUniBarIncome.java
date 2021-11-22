@@ -10,7 +10,8 @@ import java.util.regex.Pattern;
 public class T03SoftUniBarIncome {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-String regex = "%(?<name>[A-Z][a-z]+)%[^|$%.]*<(?<product>\\w+)>[^|$%.]*\\|(?<count>\\d+)\\|[^|$%.]*?" +
+
+        String regex = "%(?<name>[A-Z][a-z]+)%[^|$%.]*<(?<product>\\w+)>[^|$%.]*\\|(?<count>\\d+)\\|[^|$%.]*?" +
         "(?<price>[\\d]+.?[\\d]*)\\$";
 
         List<String> output = new LinkedList<>();
