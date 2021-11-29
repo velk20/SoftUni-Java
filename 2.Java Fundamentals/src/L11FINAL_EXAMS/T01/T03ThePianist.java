@@ -57,7 +57,7 @@ public class T03ThePianist {
                         List<String> newList = pianists.get(piece);
                         newList.remove(1);
                         newList.add(newKey);
-
+                        pianists.put(piece, newList);
                         System.out.printf("Changed the key of %s to %s!\n", piece, newKey);
                     } else {
                         System.out.printf("Invalid operation! %s does not exist in the collection.\n",piece);
@@ -73,6 +73,20 @@ public class T03ThePianist {
                 .sorted(Map.Entry.comparingByKey())
                 .forEach(kvp -> System.out.printf("%s -> Composer: %s, Key: %s%n",
                         kvp.getKey(), kvp.getValue().get(0), kvp.getValue().get(1)));
+
+        //second variation
+
+//        pianists
+//                .entrySet()
+//                .stream()
+//                .sorted((e1, e2) -> {
+//                    if (e1.getKey().compareTo(e2.getKey()) == 0) {
+//                        return e1.getValue().get(0).compareTo(e2.getValue().get(0));
+//                    }
+//                    return e1.getKey().compareTo(e2.getKey());
+//                })
+//                .forEach(entry -> System.out.printf("%s -> Composer: %s, Key: %s\n", entry.getKey(),
+//                        entry.getValue().get(0), entry.getValue().get(1)));
 
     }
 }

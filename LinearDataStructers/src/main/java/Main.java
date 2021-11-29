@@ -1,6 +1,4 @@
-package L01LinearDataStructures;
-
-public class Demo {
+public class Main {
     public static void main(String[] args) {
 
     }
