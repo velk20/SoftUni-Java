@@ -7,7 +7,6 @@ public class T03PlantWithClasses {
         private String name;
         private int rarity;
         private List<Integer> ratings;
-        Plant(){}
         Plant (String name, int rarity) {
             this.name = name;
             this.rarity = rarity;
