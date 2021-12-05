@@ -5,7 +5,8 @@ import java.util.Scanner;
 
 public class Demo {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        ArrayList<Integer> arr = new ArrayList<Integer>();
+        String greed = "Hello World";
+        System.out.println(greed.substring(3, 5));
     }
+
 }

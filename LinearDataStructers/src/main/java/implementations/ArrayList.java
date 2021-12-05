@@ -6,10 +6,26 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 public class ArrayList<E> implements List<E> {
+    private static final int INITIAL_DEFAULT_CAPACITY = 8;
+    private static final int CAPACITY_INCREASE_MULTIPLIER = 2;
+    private static final String INDEX_OUT_OF_BOUNDS_MESSAGE = "Index is out of bounds";
+
+    private E[] data;
+    private int capacity;
+    private int size;
+
+    public ArrayList() {
+        this(INITIAL_DEFAULT_CAPACITY);
+    }
+
+    public ArrayList(int initialCapacity) {
+        capacity = initialCapacity;
+        data = (E[]) new Object[capacity];
+    }
 
     @Override
     public boolean add(E element) {
-        return false;
+        
     }
 
     @Override
