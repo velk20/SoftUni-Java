@@ -2,6 +2,8 @@ package L08TextProcessing.MoreExercise;
 
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class T03TreasureFinder {
     public static void main(String[] args) {
@@ -11,15 +13,28 @@ public class T03TreasureFinder {
 
         String input = scanner.nextLine();
         while (!input.equals("find")) {
-            for (int i = 0; i < input.length(); i++) {
-                char currentSymbol = input.charAt(i);
-                for (int j = 0; j < keys.length; j++) {
-
+            char[] characters = input.toCharArray();
+            int keyLength = 0;
+            for (int i = 0; i < characters.length; i++) {
+                char currentChar = characters[i];
+                characters[i] = (char)(currentChar - keys[keyLength]);
+                keyLength++;
+                if (keyLength == keys.length) {
+                    keyLength = 0;
                 }
             }
-
-
+            String regex = "(\\w*)[&](?<name>\\w+)[&](\\w*)[<](?<location>\\w+)[>](\\w*)";
+            Pattern pattern = Pattern.compile(regex);
+            input = new String(characters);
+            Matcher matcher = pattern.matcher(input);
+            if (matcher.find()) {
+                String name = matcher.group("name");
+                String location = matcher.group("location");
+                System.out.printf("Found %s at %s\n", name, location);
+            }
             input = scanner.nextLine();
         }
+
+
     }
 }
