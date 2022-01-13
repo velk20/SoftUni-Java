@@ -9,9 +9,8 @@ public class T02SimpleCalculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        ArrayDeque<String> stack = new ArrayDeque<>();
         String[] numbersAndOperations = scanner.nextLine().split("\\s+");
-        stack.addAll(Arrays.asList(numbersAndOperations));
+        ArrayDeque<String> stack = new ArrayDeque<>(Arrays.asList(numbersAndOperations));
 
 
         while (stack.size()!= 1) {
