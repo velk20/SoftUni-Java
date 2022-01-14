@@ -14,7 +14,6 @@ public class T03DecimalToBinaryConverter {
             return;
         }
 
-
         while (number > 0) {
             int reminder = number % 2;
             stack.push(reminder);
