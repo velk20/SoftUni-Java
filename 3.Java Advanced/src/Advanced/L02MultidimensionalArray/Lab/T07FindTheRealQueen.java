@@ -4,60 +4,126 @@ import java.util.*;
 
 public class T07FindTheRealQueen {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        char[][] matrix = new char[8][8];
-        for (int i = 0; i < 8; i++) {
-            matrix[i] = scanner.nextLine().replaceAll("\\s+", "").toCharArray();
-        }
+        Scanner scan = new Scanner(System.in);
 
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                if (matrix[i][j] == 'q') {
-                    //check horizontal
-                    char[] row = matrix[i];
-                    boolean flagForHorizontalEnemy = false;
-                    for (int k = 0; k < row.length; k++) {
-                        if (row[k] == 'q') {
-                            flagForHorizontalEnemy = true;
-                            break;
-                        }
-                    }
+        int rows = 8;
+        int cols = 8;
 
-                    //check verticals
-                    boolean flagForVerticalEnemy = false;
-                    for (int k = 0; k < 8; k++) {
-                        char element = matrix[k][j];
-                        if (element == 'q') {
-                            flagForVerticalEnemy = true;
-                            break;
-                        }
-                    }
+        char[][] chessTable = readMatrix(rows, cols, scan);
 
-                    //check firstDiagonal
-                    boolean flagForFirstDiagonalEnemy = false;
-                    for (int k = 1; k < 8; k++) {
-                        if (matrix[i - k][j + k] == 'q') {
-                            flagForFirstDiagonalEnemy = true;
-                                    break;
-                        }
-                    }
+        for (int row = 0; row < chessTable.length; row++) {
+            for (int elem = 0; elem < chessTable[row].length; elem++) {
+                char currentElement = chessTable[row][elem];
 
-                    for (int k = 1; k < 8; k++) {
-                        if (matrix[i + k][i - k] == 'q') {
-                            flagForFirstDiagonalEnemy = true;
-                            break;
-                        }
-                    }
-
-                    //check SecondDiagonal
-                    boolean flagForSecondDiagonalEnemy = false;
-                    for (int k = 0; k < 8; k++) {
+                if (currentElement == 'q') {
+                    if (check(chessTable, row, elem)) {
+                        System.out.print(row + " ");
+                        System.out.print(elem);
 
                     }
+
                 }
             }
         }
+
+
     }
 
+    private static char[][] readMatrix(int rows, int cols, Scanner scan) {
+        char[][] matrix = new char[rows][cols];
+
+        for (int row = 0; row < rows; row++) {
+
+            String[] line = scan.nextLine().split("\\s+");
+            for (int col = 0; col < matrix[row].length; col++) {
+                char currentChar = line[col].charAt(0);
+                matrix[row][col] = currentChar;
+            }
+
+        }
+
+
+        return matrix;
+    }
+
+    private static boolean check(char[][] chessTable, int row, int elem) {
+
+        for (int i = elem + 1; i < chessTable[row].length; i++) { //RightHorizontal yes
+            char charToCheck = chessTable[row][i];
+
+            if (charToCheck == 'q') {
+                return false;
+            }
+        }
+
+        for (int i = elem - 1; i >= 0; i--) { //LeftHorizontal yes
+            char charToCheck = chessTable[row][i];
+
+            if (charToCheck == 'q') {
+                return false;
+            }
+        }
+
+
+        for (int i = row + 1; i < chessTable.length; i++) { //DownVertical yes
+            char charToCheck = chessTable[i][elem];
+
+            if (charToCheck == 'q') {
+                return false;
+            }
+        }
+
+        for (int i = row - 1; i >= 0; i--) { // UpVertical yes
+            char charToCheck = chessTable[i][elem];
+
+            if (charToCheck == 'q') {
+                return false;
+            }
+        }
+
+        int uldElement = elem - 1;
+
+        for (int i = row - 1; i >= 0 && uldElement >= 0; i--, uldElement--) { // UpLeftDiagonal yes
+            char charToCheck = chessTable[i][uldElement];
+
+            if (charToCheck == 'q') {
+                return false;
+            }
+        }
+
+
+        int urdElement = elem + 1;
+
+        for (int i = row - 1; i >= 0 && urdElement < chessTable[i].length; i--, urdElement++) { // UpRightDiagonal yes
+            char charToCheck = chessTable[i][urdElement];
+
+            if (charToCheck == 'q') {
+                return false;
+            }
+        }
+
+
+        int element = elem - 1;
+
+        for (int i = row + 1; i < chessTable.length && element >= 0; i++, element--) { // DownLeftDiagonal
+            char charToCheck = chessTable[i][element];
+
+            if (charToCheck == 'q') {
+                return false;
+            }
+        }
+
+        int element1 = elem + 1;
+
+        for (int i = row + 1; i < chessTable.length && element1 < chessTable[row].length; i++, element1++) { // DownRightDiagonal
+            char charToCheck = chessTable[i][element1];
+
+            if (charToCheck == 'q') {
+                return false;
+            }
+        }
+
+        return true;
+    }
 
 }
