@@ -19,10 +19,14 @@ public class T03DiagonalDifference {
             primaryDiagonal += matrix[i][i];
         }
 
-        int row = 0;
-        for (int i = matrix.length - 1; i >= 0; i--) {
-            secondDiagonal += matrix[row][i];
-            row++;
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[row].length; col++) {
+                int currentElement = matrix[row][col];
+
+                if (col == matrix.length - row - 1) {
+                    secondDiagonal += currentElement;
+                }
+            }
         }
 
         System.out.println(Math.abs(primaryDiagonal - secondDiagonal));

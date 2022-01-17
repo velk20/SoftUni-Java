@@ -23,39 +23,36 @@ public class T01FilltheMatrix {
 
     public static void patternA(int[][] matrix) {
         int counter = 1;
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
-                matrix[j][i] = counter;
+        for (int col = 0; col < matrix.length; col++) {
+            for (int row = 0; row < matrix.length; row++) {
+                matrix[row][col] = counter;
                 counter++;
             }
         }
 
-        for (int[] ints : matrix) {
-            for (int anInt : ints) {
-                System.out.print(anInt+" ");
-            }
-            System.out.println();
-        }
+        printMatrix(matrix);
     }
 
     public static void patternB(int[][] matrix) {
         int counter = 1;
-        int col = 0;
-        for (int i = 0; i < matrix.length; i++) {
+        for (int col = 0; col < matrix.length; col++) {
             if (col % 2 == 0) {
-                for (int j = 0; j < matrix.length; j++) {
-                    matrix[j][i] = counter;
+                for (int row = 0; row < matrix.length; row++) {
+                    matrix[row][col] = counter;
                     counter++;
                 }
             } else {
-                for (int j = matrix.length - 1; j >= 0; j--) {
-                    matrix[j][i] = counter;
+                for (int row = matrix.length - 1; row >= 0; row--) {
+                    matrix[row][col] = counter;
                     counter++;
                 }
             }
-            col++;
         }
 
+        printMatrix(matrix);
+    }
+
+    public static void printMatrix(int[][] matrix) {
         for (int[] ints : matrix) {
             for (int anInt : ints) {
                 System.out.print(anInt+" ");

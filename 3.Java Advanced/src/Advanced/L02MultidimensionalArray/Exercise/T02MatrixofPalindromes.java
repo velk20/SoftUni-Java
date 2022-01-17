@@ -13,11 +13,10 @@ public class T02MatrixofPalindromes {
         String[][] matrix = new String[rows][cols];
         for (int row = 0; row < matrix.length; row++) {
             for (int col = 0; col < matrix[row].length; col++) {
-                StringBuilder stringBuilder = new StringBuilder();
-                stringBuilder.append((char) (97 + row));
-                stringBuilder.append((char) (initialChar + col));
-                stringBuilder.append((char) (97 + row));
-                matrix[row][col] = stringBuilder.toString();
+                String stringBuilder = String.valueOf((char) (97 + row)) +
+                        (char) (initialChar + col) +
+                        (char) (97 + row);
+                matrix[row][col] = stringBuilder;
             }
             initialChar++;
         }
