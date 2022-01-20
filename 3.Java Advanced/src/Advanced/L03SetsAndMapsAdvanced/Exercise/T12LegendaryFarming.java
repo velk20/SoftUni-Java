@@ -1,6 +1,6 @@
 package Advanced.L03SetsAndMapsAdvanced.Exercise;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class T12LegendaryFarming {
     public static void main(String[] args) {
