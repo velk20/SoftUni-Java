@@ -1,6 +1,5 @@
-package Advanced.L10EXAMS;
+package Advanced.L10EXAMS.JavaAdvancedRetakeExam15December;
 
-import javax.naming.InitialContext;
 import java.util.*;
 
 public class T02ThroneConquering {
