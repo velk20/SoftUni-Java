@@ -1,4 +1,4 @@
-package Advanced.L10EXAMS;
+package Advanced.L10EXAMS.JavaAdvancedExam23October2021;
 
 import java.util.Scanner;
 
