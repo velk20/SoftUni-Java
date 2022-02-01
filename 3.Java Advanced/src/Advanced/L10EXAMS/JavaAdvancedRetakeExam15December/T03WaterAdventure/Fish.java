@@ -13,7 +13,11 @@ public class Fish {
 
     @Override
     public String toString() {
-        return String.format("Fish: %s\nColor: %s\nNumber of fins: %d", this.name, this.color, this.fins);
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Fish: ").append(this.name).append(System.lineSeparator());//na nov red
+        stringBuilder.append("Color: ").append(this.color).append(System.lineSeparator());//na nov red
+        stringBuilder.append("Number of fins: ").append(this.fins);//na nov red
+        return stringBuilder.toString();
     }
 
     public String getName() {

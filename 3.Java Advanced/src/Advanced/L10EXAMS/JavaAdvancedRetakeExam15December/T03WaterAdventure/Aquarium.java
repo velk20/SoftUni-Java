@@ -1,8 +1,6 @@
 package Advanced.L10EXAMS.JavaAdvancedRetakeExam15December.T03WaterAdventure;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Aquarium {
@@ -15,7 +13,7 @@ public class Aquarium {
         this.name = name;
         this.capacity = capacity;
         this.size = size;
-        fishInPool = new HashMap<>();
+        fishInPool = new LinkedHashMap<>();
     }
 
     public String getName() {
@@ -36,8 +34,9 @@ public class Aquarium {
 
     public void add(Fish fish) {
         String fishName = fish.getName();
-        if (!fishInPool.containsKey(fishName)) {
+        if (!fishInPool.containsKey(fishName) && capacity > getFishInPool()) {
             fishInPool.put(fishName, fish);
+
         }
     }
 
@@ -56,7 +55,12 @@ public class Aquarium {
     }
 
     public String report() {
-        return String.format("Aquarium: %s ^ Size: %d\n", this.name, this.size) +
-                fishInPool.values().stream().toString();
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(String.format("Aquarium: %s ^ Size: %d", this.name, this.size)).append(System.lineSeparator());
+
+            fishInPool.values().stream().forEach(e -> stringBuilder.append(e).append(System.lineSeparator()));
+
+
+        return stringBuilder.toString();
     }
 }

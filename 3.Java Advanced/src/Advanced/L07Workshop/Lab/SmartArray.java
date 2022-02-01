@@ -1,6 +1,6 @@
 package Advanced.L07Workshop.Lab;
 
-import java.util.Arrays;
+import java.util.function.Consumer;
 
 public class SmartArray {
     public static final int INITIAL_CAPACITY = 4;
@@ -24,6 +24,64 @@ public class SmartArray {
     public int get(int index) {
         isInBounds(index);
             return this.data[index];
+    }
+
+    public int remove(int index) {
+        isInBounds(index);
+        int removedNumber = this.data[index];
+        shiftRight(index);
+        this.size--;
+        shrink();
+        return removedNumber;
+    }
+
+    public boolean contains(int element) {
+        for (int i = 0; i < this.size; i++) {
+            if (this.data[i] == element) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void add(int firstIndex, int element) {
+        isInBounds(firstIndex);
+        size++;
+        shiftLeft(firstIndex);
+        resize();
+        this.data[firstIndex] = element;
+    }
+
+    public void forEach(Consumer<Integer> consumer) {
+        for (int i = 0; i < this.size; i++) {
+            consumer.accept(this.data[i]);
+        }
+    }
+
+    public void shiftRight(int index) {
+        for (int i = index; i < this.size-1; i++) {
+            this.data[i] = this.data[i + 1];
+        }
+        this.data[size - 1] = 0;
+    }
+
+    public void shiftLeft(int index) {
+        for (int i = this.size - 1; i > index; i--) {
+            this.data[i] = this.data[i - 1];
+        }
+    }
+
+
+
+    public void shrink() {
+        if (this.capacity / this.size > 4) {
+            int[] temp = new int[this.capacity / this.size];
+            for (int i = 0; i < this.size; i++) {
+                temp[i] = this.data[i];
+            }
+            this.capacity = this.capacity / this.size;
+            this.data = temp;
+        }
     }
 
     public void resize() {
