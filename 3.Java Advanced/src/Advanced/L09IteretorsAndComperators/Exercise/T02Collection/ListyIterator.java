@@ -1,11 +1,10 @@
-package T01ListyIterator;
+package Advanced.L09IteretorsAndComperators.Exercise.T02Collection;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.EmptyStackException;
+import java.util.Iterator;
 import java.util.List;
 
-public class ListyIterator {
+public class ListyIterator implements Iterable<String> {
+
 
     private List<String> data;
     private int index;
@@ -30,10 +29,10 @@ public class ListyIterator {
         this.data = data;
         if (data.isEmpty()) {
             this.index = -1;
-        }else this.index = 0;
+        } else this.index = 0;
     }
 
-    public boolean Move(){
+    public boolean Move() {
         if (this.index < this.data.size() - 1) {
             this.index++;
             return true;
@@ -42,19 +41,40 @@ public class ListyIterator {
 
     }
 
-    public void Print() throws Exception{
+    public void Print() throws Exception {
         if (!this.data.isEmpty()) {
             System.out.println(this.data.get(this.index));
-        }
-        else{
+        } else {
             throw new Exception("Invalid Operation!");
         }
     }
 
-    public boolean HasNext(){
+    public void PrintAll() {
+        System.out.println(String.join(" ", data));
+    }
+
+    public boolean HasNext() {
         return this.index < this.data.size() - 1;
     }
 
 
+    @Override
+    public Iterator<String> iterator() {
+        return new Iterator<String>() {
+            int index = 0;
 
+            @Override
+            public boolean hasNext() {
+                return index >= 0 && index < data.size();
+            }
+
+            @Override
+            public String next() {
+                String name = data.get(this.index);
+                index++;
+                return name;
+            }
+
+        };
+    }
 }

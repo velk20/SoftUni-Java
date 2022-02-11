@@ -1,4 +1,4 @@
-package T01ListyIterator;
+package Advanced.L09IteretorsAndComperators.Exercise.T02Collection;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         //"Create {} {} {} {} {}"
         String createInput = scanner.nextLine();
@@ -23,6 +23,9 @@ public class Main {
                     System.out.println(listyIterator.Move());
                     break;
 
+                case "PrintAll":
+                    listyIterator.PrintAll();
+                    break;
                 case "Print":
                     try {
                         listyIterator.Print();
@@ -38,10 +41,7 @@ public class Main {
             }
 
 
-
             command = scanner.nextLine();
         }
-
-
     }
 }
