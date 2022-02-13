@@ -65,15 +65,14 @@ public class T02Selling {
                 for (int i = 0; i < matrix.length; i++) {
                     for (int j = 0; j < matrix[i].length; j++) {
                         if (matrix[i][j] == 'O') {
-                            matrix[i][j] = 'S';
                             sRow = i;
                             sCol = i;
+                            matrix[i][j] = 'S';
                         }
                     }
                 }
             }
 
-                matrix[sRow][sCol] = 'S';
 
 
             if (totalMoney >= 50) {

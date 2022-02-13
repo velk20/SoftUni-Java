@@ -4,6 +4,12 @@ import java.util.*;
 
 public class Demo {
     public static void main(String[] args) {
+
+
+        //FILL WITH STREAM API
+        // Arrays.stream(scanner.nextLine().split(", ")).mapToInt(Integer::parseInt).forEach(daffodilsQueue::offer);
+        // Arrays.stream(scanner.nextLine().split(", ")).mapToInt(Integer::parseInt).forEach(tulipsStack::push);
+
         Scanner scanner = new Scanner(System.in);
         int n = Integer.parseInt(scanner.nextLine());
         Map<String, Double> studentsGrades = new TreeMap<>();

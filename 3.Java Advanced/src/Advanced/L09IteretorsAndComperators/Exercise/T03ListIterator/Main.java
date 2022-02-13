@@ -1,4 +1,4 @@
-package Advanced.L09IteretorsAndComperators.Exercise.T03StackIterator;
+package Advanced.L09IteretorsAndComperators.Exercise.T03ListIterator;
 
 import java.io.BufferedReader;
 import java.io.IOException;

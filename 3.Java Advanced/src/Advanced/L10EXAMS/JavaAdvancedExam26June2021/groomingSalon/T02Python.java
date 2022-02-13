@@ -18,6 +18,8 @@ public class T02Python {
         int snakeRow = 0;
         int snakeCol = 0;
 
+        int counterForAllFood = 0;
+
         int pythonLen = 1;
 
         for (int i = 0; i < n; i++) {
@@ -26,61 +28,66 @@ public class T02Python {
                 if (matrix[i][j] == 's') {
                     snakeRow = i;
                     snakeCol = j;
+                } else if (matrix[i][j] == 'f') {
+                    counterForAllFood++;
                 }
             }
         }
 
 
-        while (!commands.isEmpty()) {
-            String command = commands.get(0);
-            commands.remove(0);
+        for (int i = 0; i < commands.size(); i++) {
+            String command = commands.get(i);
 
             matrix[snakeRow][snakeCol] = '*';
 
             switch (command) {
                 case "right":
                     snakeCol++;
-                    if (!(snakeCol<matrix[snakeRow].length)) {
+                    if (snakeCol>=n) {
                         snakeCol = 0;
                     }
                     break;
 
-                    case "left":
-                        snakeCol--;
-                        if (!(snakeCol >= 0)) {
-                            snakeCol = matrix[snakeRow].length-1;
-                        }
+                case "left":
+                    snakeCol--;
+                    if (snakeCol<0) {
+                        snakeCol = n - 1;
+                    }
                     break;
 
-                    case "up":
-                        snakeRow--;
-                        if (!(snakeRow >= 0)) {
-                            snakeRow = matrix.length - 1;
-                        }
+                case "up":
+                    snakeRow--;
+                    if (snakeRow<0) {
+                        snakeRow = n - 1;
+                    }
                     break;
 
-                    case "down":
-                        snakeRow++;
-                        if (!(snakeRow < matrix.length)) {
-                            snakeRow = 0;
-                        }
+                case "down":
+                    snakeRow++;
+                    if (snakeRow>=n) {
+                        snakeRow = 0;
+                    }
                     break;
             }
 
             if (matrix[snakeRow][snakeCol] == 'f') {
                 pythonLen++;
+                counterForAllFood--;
                 matrix[snakeRow][snakeCol] = 's';
 
             } else if (matrix[snakeRow][snakeCol] == 'e') {
                 enemyKilledMe = true;
                 matrix[snakeRow][snakeCol] = 's';
-
                 break;
-            } else {
-
-                matrix[snakeRow][snakeCol] = 's';
             }
 
+
+            matrix[snakeRow][snakeCol] = 's';
+
+            if (counterForAllFood == 0) {
+                System.out.printf("You win! Final python length is %d", pythonLen);
+                break;
+            }
 
         }
 
@@ -88,18 +95,8 @@ public class T02Python {
             System.out.println("You lose! Killed by an enemy!");
         } else {
 
-            int remainFood = 0;
-
-            for (char[] chars : matrix) {
-                for (char aChar : chars) {
-                    if (aChar=='f') remainFood++;
-                }
-            }
-
-            if (remainFood == 0) {
-                System.out.printf("You win! Final python length is %d", pythonLen);
-            } else {
-                System.out.printf("You lose! There is still %d food to be eaten.", remainFood);
+            if (counterForAllFood != 0) {
+                System.out.printf("You lose! There is still %d food to be eaten.", counterForAllFood);
             }
         }
 
