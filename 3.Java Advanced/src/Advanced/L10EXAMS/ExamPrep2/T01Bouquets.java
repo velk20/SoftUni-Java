@@ -14,9 +14,15 @@ public class T01Bouquets {
         ArrayDeque<Integer> daffodilsQueue = new ArrayDeque<>();
         ArrayDeque<Integer> tulipsStack = new ArrayDeque<>();
 
+        //FILL WITH STREAM API
+       // Arrays.stream(scanner.nextLine().split(", ")).mapToInt(Integer::parseInt).forEach(daffodilsQueue::offer);
+       // Arrays.stream(scanner.nextLine().split(", ")).mapToInt(Integer::parseInt).forEach(tulipsStack::push);
+
         int bouquetsCount = 0;
 
         List<Integer> reserveFlowers = new ArrayList<>();
+
+
         for (Integer integer : d) {
             daffodilsQueue.offer(integer);
         }
