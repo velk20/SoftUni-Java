@@ -1,4 +1,4 @@
-package parking;
+package Advanced.L10EXAMS.JavaAdvancedExam28June2020.parking;
 
 public class Car {
     private String manufacturer;
