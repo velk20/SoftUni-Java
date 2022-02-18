@@ -1,8 +1,8 @@
-    package Advanced.L10EXAMS;
+    package Advanced.L10EXAMS.JavaAdvancedExam22Feb2020;
 
     import java.util.Scanner;
 
-    public class Revolt {
+    public class T02Revolt {
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
             boolean finish = false;
