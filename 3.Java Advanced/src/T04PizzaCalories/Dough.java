@@ -1,7 +1,7 @@
 package T04PizzaCalories;
 
 public class Dough {
-    private String flourType;
+    private String flourType;//white or wholegrain
     private String bakingTechnique;
     private double weight;
 
@@ -13,9 +13,10 @@ public class Dough {
     }
 
     private void setFlourType(String flourType) {
+        if (flourType.equals("white") || flourType.equals("wholegrain")) {
+            this.flourType = flourType;
+        }else throw new IllegalArgumentException("Invalid type of dough.");
 
-
-        this.flourType = flourType;
     }
 
     private void setBakingTechnique(String bakingTechnique) {
@@ -23,7 +24,9 @@ public class Dough {
     }
 
     private void setWeight(double weight) {
-        this.weight = weight;
+        if (weight >= 1 && weight <= 200) {
+            this.weight = weight;
+        }else throw new IllegalArgumentException("Dough weight should be in the range [1..200].");
     }
 
 //    public double calculateCalories() {
