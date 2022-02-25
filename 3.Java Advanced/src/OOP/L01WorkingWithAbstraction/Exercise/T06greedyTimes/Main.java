@@ -33,30 +33,10 @@ public class Main {
 
             switch (typeOfItem) {
                 case "Gem":
-                    if (!myBag.containsKey(typeOfItem)) {
-                        if (myBag.containsKey("Gold")) {
-                            if (currentItemAmount > myBag.get("Gold").values().stream().mapToLong(e -> e).sum()) {
-                                continue;
-                            }
-                        } else {
-                            continue;
-                        }
-                    } else if (myBag.get(typeOfItem).values().stream().mapToLong(e -> e).sum() + currentItemAmount > myBag.get("Gold").values().stream().mapToLong(e -> e).sum()) {
-                        continue;
-                    }
+                    if (checkItem(myBag, typeOfItem, "Gold", currentItemAmount)) continue;
                     break;
                 case "Cash":
-                    if (!myBag.containsKey(typeOfItem)) {
-                        if (myBag.containsKey("Gem")) {
-                            if (currentItemAmount > myBag.get("Gold").values().stream().mapToLong(e -> e).sum()) {
-                                continue;
-                            }
-                        } else {
-                            continue;
-                        }
-                    } else if (myBag.get(typeOfItem).values().stream().mapToLong(e -> e).sum() + currentItemAmount > myBag.get("Gem").values().stream().mapToLong(e -> e).sum()) {
-                        continue;
-                    }
+                    if (checkItem(myBag, typeOfItem, "Gem", currentItemAmount)) continue;
                     break;
             }
 
@@ -87,6 +67,21 @@ public class Main {
             x.getValue().entrySet().stream().sorted((e1, e2) -> e2.getKey().compareTo(e1.getKey())).forEach(i -> System.out.println("##" + i.getKey() + " - " + i.getValue()));
 
         }
+    }
+
+    private static boolean checkItem(LinkedHashMap<String, LinkedHashMap<String, Long>> myBag, String typeOfItem, String Gold, long currentItemAmount) {
+        if (!myBag.containsKey(typeOfItem)) {
+            if (myBag.containsKey(Gold)) {
+                if (currentItemAmount > myBag.get(Gold).values().stream().mapToLong(e -> e).sum()) {
+                    return true;
+                }
+            } else {
+                return true;
+            }
+        } else if (myBag.get(typeOfItem).values().stream().mapToLong(e -> e).sum() + currentItemAmount > myBag.get(Gold).values().stream().mapToLong(e -> e).sum()) {
+            return true;
+        }
+        return false;
     }
 
     private static String getTypeOfItem(String name) {
