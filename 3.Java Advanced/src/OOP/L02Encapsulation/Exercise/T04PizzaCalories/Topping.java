@@ -1,4 +1,4 @@
-package T04PizzaCalories;
+package OOP.L02Encapsulation.Exercise.T04PizzaCalories;
 
 public class Topping {
     private String toppingType;//meat, veggies, cheese, or sauce.
@@ -11,7 +11,7 @@ public class Topping {
     }
 //"Cannot place {name of invalid argument} on top of your pizza."
     private void setToppingType(String toppingType) {
-        if (toppingType.equals("meat") || toppingType.equals("veggies") || toppingType.equals("cheese") || toppingType.equals("sauce")) {
+        if (toppingType.equals("Meat") || toppingType.equals("Veggies") || toppingType.equals("Cheese") || toppingType.equals("Sauce")) {
             this.toppingType = toppingType;
 
         } else throw new IllegalArgumentException(String.format("Cannot place %s on top of your pizza.", toppingType));
@@ -25,7 +25,8 @@ public class Topping {
             throw new IllegalArgumentException(String.format("%s weight should be in the range [1..50].", this.toppingType));
     }
 
-//    public double calculateCalories() {
-//
-//    }
+    public double calculateCalories() {
+        ToppingsModifiers toppingsModifiers = ToppingsModifiers.valueOf(this.toppingType);
+        return 2 * this.weight * toppingsModifiers.getModifier();
+    }
 }

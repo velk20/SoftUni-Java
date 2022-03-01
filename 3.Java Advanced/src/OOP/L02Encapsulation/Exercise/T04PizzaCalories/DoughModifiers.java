@@ -1,4 +1,4 @@
-package T04PizzaCalories;
+package OOP.L02Encapsulation.Exercise.T04PizzaCalories;
 
 public enum DoughModifiers {
     White(1.5),
