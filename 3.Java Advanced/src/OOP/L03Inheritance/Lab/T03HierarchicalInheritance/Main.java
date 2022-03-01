@@ -1,4 +1,4 @@
-package T03HierarchicalInheritance;
+package OOP.L03Inheritance.Lab.T03HierarchicalInheritance;
 
 import java.util.Scanner;
 

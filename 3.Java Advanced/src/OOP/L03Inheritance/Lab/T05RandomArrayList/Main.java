@@ -1,4 +1,4 @@
-package T06StackOfStrings;
+package OOP.L03Inheritance.Lab.T05RandomArrayList;
 
 import java.util.Scanner;
 
