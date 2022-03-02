@@ -1,7 +1,7 @@
 package Advanced.L09IteretorsAndComperators.DemoComparators;
 
 
-//klasa hero moje da bude sravnim
+//klasa OOP.L03Inheritance.Exercise.hero moje da bude sravnim
 public class Hero implements Comparable<Hero> {
     private String name;
     private int power;
