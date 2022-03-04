@@ -1,4 +1,4 @@
-package T02MultipleImplementation;
+package OOP.L04InterfacesAndAbstraction.Exercise.T02MultipleImplementation;
 
 import java.lang.reflect.Method;
 import java.util.*;

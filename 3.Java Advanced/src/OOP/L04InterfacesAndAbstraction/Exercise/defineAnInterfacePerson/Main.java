@@ -1,4 +1,4 @@
-package defineAnInterfacePerson;
+package OOP.L04InterfacesAndAbstraction.Exercise.defineAnInterfacePerson;
 
 import java.lang.reflect.Method;
 import java.util.*;

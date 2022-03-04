@@ -1,7 +1,6 @@
-package T04FoodShortage;
+package OOP.L04InterfacesAndAbstraction.Exercise.T04FoodShortage;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {

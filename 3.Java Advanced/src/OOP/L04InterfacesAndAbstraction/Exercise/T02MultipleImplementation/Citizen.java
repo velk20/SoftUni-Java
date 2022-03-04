@@ -1,4 +1,4 @@
-package T02MultipleImplementation;
+package OOP.L04InterfacesAndAbstraction.Exercise.T02MultipleImplementation;
 
 public class Citizen implements Person,Identifiable,Birthable {
     private String name;

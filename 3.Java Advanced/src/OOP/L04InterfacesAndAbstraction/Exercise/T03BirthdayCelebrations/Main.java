@@ -1,4 +1,4 @@
-package T03BirthdayCelebrations;
+package OOP.L04InterfacesAndAbstraction.Exercise.T03BirthdayCelebrations;
 
 import java.util.*;
 

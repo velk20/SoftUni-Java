@@ -1,4 +1,4 @@
-package T04FoodShortage;
+package OOP.L04InterfacesAndAbstraction.Exercise.T04FoodShortage;
 
 public class Citizen implements Person, Identifiable, Buyer {
     private String name;

@@ -1,4 +1,4 @@
-package T03BirthdayCelebrations;
+package OOP.L04InterfacesAndAbstraction.Exercise.T03BirthdayCelebrations;
 
 public class Citizen implements Person, Identifiable, Birthable {
     private String name;
