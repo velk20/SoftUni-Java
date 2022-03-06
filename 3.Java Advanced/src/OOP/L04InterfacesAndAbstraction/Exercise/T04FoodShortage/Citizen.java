@@ -12,6 +12,7 @@ public class Citizen implements Person, Identifiable, Buyer {
         this.age = age;
         this.id = id;
         this.birthDate = birthDate;
+        this.food = 0;
     }
 
 
@@ -25,8 +26,6 @@ public class Citizen implements Person, Identifiable, Buyer {
     public int getAge() {
         return this.age;
     }
-
-
 
     @Override
     public String getId() {

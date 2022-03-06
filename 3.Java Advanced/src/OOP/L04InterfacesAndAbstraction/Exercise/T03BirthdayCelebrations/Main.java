@@ -23,6 +23,10 @@ public class Main {
             string = scanner.nextLine();
         }
         String year = scanner.nextLine();
-        allObjectsBirthdays.stream().filter(e -> e.getBirthDate().endsWith(year)).forEach(e -> System.out.println(e.getBirthDate()));
+        allObjectsBirthdays.stream()
+                .map(Birthable::getBirthDate)
+                .filter(birthDate -> birthDate.endsWith(year))
+                .forEach(System.out::println);
+
     }
 }
