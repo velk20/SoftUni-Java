@@ -21,15 +21,13 @@ public class T08OnTimeForTheExam {
             System.out.println("Late");
             if (diff <= 59) {
 
-
-
-                System.out.printf("%d minutes after the start",diff);
+                System.out.printf("%d minutes after the start", diff);
 
             } else {
-                if(diff%60 < 10)
-                    System.out.printf("%d:0%d hours after the start",(diff/60),(diff%60));
-                    else
-                System.out.printf("%d:%d hours after the start",(diff/60),(diff%60));
+                if (diff % 60 < 10)
+                    System.out.printf("%d:0%d hours after the start", (diff / 60), (diff % 60));
+                else
+                    System.out.printf("%d:%d hours after the start", (diff / 60), (diff % 60));
             }
 
         } else if (arriveSeconds >= lateOrNot && arriveSeconds <= examSeconds) {
@@ -38,19 +36,19 @@ public class T08OnTimeForTheExam {
                 diff = (examSeconds - arriveSeconds) / 60;
                 System.out.printf("%d minutes before the start", diff);
             }
-        }else if (arriveSeconds < examSeconds) {
+        } else if (arriveSeconds < examSeconds) {
 
 
-            diff = Math.abs ((arriveSeconds - examSeconds) / 60);
+            diff = Math.abs((arriveSeconds - examSeconds) / 60);
             System.out.println("Early");
             if (diff <= 59) {
-                System.out.printf("%d minutes before the start",diff);
+                System.out.printf("%d minutes before the start", diff);
 
             } else {
-                if (diff%60 < 10)
-                    System.out.printf("%d:0%d hours before the start",(diff/60),(diff%60));
-                    else
-                System.out.printf("%d:%d hours before the start",(diff/60),(diff%60));
+                if (diff % 60 < 10)
+                    System.out.printf("%d:0%d hours before the start", (diff / 60), (diff % 60));
+                else
+                    System.out.printf("%d:%d hours before the start", (diff / 60), (diff % 60));
             }
         }
 
